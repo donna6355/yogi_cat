@@ -1,5 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
+
+import 'package:go_router/go_router.dart';
 
 // ─────────────────────────────────────────────
 // Data model for a single puzzle piece
@@ -15,7 +18,8 @@ class PuzzlePiece {
 // Main puzzle screen
 // ─────────────────────────────────────────────
 class PuzzleScreen extends StatefulWidget {
-  const PuzzleScreen({super.key});
+  final String img;
+  const PuzzleScreen(this.img, {super.key});
 
   @override
   State<PuzzleScreen> createState() => _PuzzleScreenState();
@@ -60,8 +64,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
 
     // final imageProvider = NetworkImage(url);
 
-    const assetPath = 'images/sample.webp';
-    final imageProvider = const AssetImage(assetPath);
+    final imageProvider = AssetImage(widget.img);
     final stream = imageProvider.resolve(const ImageConfiguration());
 
     stream.addListener(
@@ -97,73 +100,33 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1A1A2E),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF16213E),
-        title: const Text(
-          '🧩 Image Puzzle',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ),
+        automaticallyImplyLeading: false,
         actions: [
           IconButton(
-            icon: const Icon(Icons.refresh, color: Colors.white),
-            tooltip: 'Shuffle',
-            onPressed: () => setState(_initPieces),
+            icon: const Icon(Icons.close),
+            onPressed: () => context.pop(),
           ),
         ],
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const SizedBox(height: 16),
-          if (_solved) _buildSolvedBanner(),
-          Expanded(
-            child: Center(
-              child: _imageLoaded && _image != null
-                  ? _buildPuzzleGrid()
-                  : const CircularProgressIndicator(color: Colors.white),
-            ),
-          ),
-          _buildHint(),
-          const SizedBox(height: 16),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSolvedBanner() {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      decoration: BoxDecoration(
-        color: Colors.greenAccent.withValues(alpha: 0.15),
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.greenAccent, width: 1.5),
-      ),
-      child: const Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(Icons.check_circle, color: Colors.greenAccent),
-          SizedBox(width: 8),
-          Text(
-            'Puzzle Solved! 🎉',
-            style: TextStyle(
-              color: Colors.greenAccent,
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
+          _imageLoaded && _image != null
+              ? _buildPuzzleGrid()
+              : const CircularProgressIndicator(color: Colors.black87),
+          SizedBox(width: double.infinity, height: 24),
+          _solved ? SizedBox() : _buildHint(),
         ],
       ),
     );
   }
 
   Widget _buildHint() {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Text(
-        'Drag pieces to swap them',
-        style: TextStyle(color: Colors.white54, fontSize: 13),
-      ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text('dragNDrop'.tr()),
     );
   }
 
@@ -181,11 +144,11 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
           width: boardSize,
           height: boardSize,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.deepPurpleAccent, width: 2),
+            border: Border.all(color: Colors.black87, width: 2),
             borderRadius: BorderRadius.circular(8),
             boxShadow: [
               BoxShadow(
-                color: Colors.deepPurple.withValues(alpha: 0.5),
+                color: Colors.black87.withValues(alpha: 0.5),
                 blurRadius: 20,
                 spreadRadius: 2,
               ),
@@ -235,7 +198,7 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
             decoration: BoxDecoration(
               color: Colors.white.withValues(alpha: 0.05),
               border: Border.all(
-                color: Colors.deepPurpleAccent.withValues(alpha: 0.4),
+                color: Colors.black87.withValues(alpha: 0.4),
                 width: 1,
               ),
             ),
@@ -245,10 +208,10 @@ class _PuzzleScreenState extends State<PuzzleScreen> {
             decoration: BoxDecoration(
               border: Border.all(
                 color: isHovered
-                    ? Colors.amber
+                    ? Colors.lightBlueAccent
                     : isCorrect && !_solved
-                    ? Colors.greenAccent.withValues(alpha: 0.6)
-                    : Colors.deepPurple.withValues(alpha: 0.3),
+                    ? Colors.black87.withValues(alpha: 0.6)
+                    : Colors.redAccent.withValues(alpha: 0.3),
                 width: isHovered ? 2.5 : 1,
               ),
             ),
