@@ -24,17 +24,19 @@ class HomeScreen extends StatelessWidget {
                       width: constraint.maxWidth,
                     ),
                     Expanded(
-                      child: GridView.count(
+                      child: GridView.builder(
                         padding: const EdgeInsets.all(16),
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 12,
-                        mainAxisSpacing: 12,
-                        children: context.list
-                            .map(
-                              (pose) =>
-                                  PoseCard(currentStage: stage, pose: pose),
-                            )
-                            .toList(),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 12,
+                              mainAxisSpacing: 12,
+                            ),
+                        itemCount: context.list.length,
+                        itemBuilder: (context, index) {
+                          final pose = context.list[index];
+                          return PoseCard(currentStage: stage, pose: pose);
+                        },
                       ),
                     ),
                   ],

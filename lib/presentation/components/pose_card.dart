@@ -14,7 +14,7 @@ class PoseCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isLocked = currentStage + 1 < pose.stage;
-    return InkWell(
+    return GestureDetector(
       onTap: () {
         if (isLocked) return;
         final isSolved = currentStage >= pose.stage;
@@ -25,6 +25,8 @@ class PoseCard extends StatelessWidget {
         child: Stack(
           children: [
             Image.asset(pose.img),
+            if (currentStage >= pose.stage)
+              ColoredBox(color: Colors.black26, child: Image.asset(YmImg.comp)),
             if (isLocked)
               BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
