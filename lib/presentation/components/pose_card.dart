@@ -18,10 +18,7 @@ class PoseCard extends StatelessWidget {
       onTap: () {
         if (isLocked) return;
         final isSolved = currentStage >= pose.stage;
-        context.push(
-          isSolved ? YmRoutes.puzzle : YmRoutes.puzzle,
-          extra: pose.img,
-        );
+        context.push(isSolved ? YmRoutes.pose : YmRoutes.puzzle, extra: pose);
       },
       child: ClipRRect(
         borderRadius: BorderRadiusGeometry.circular(8),

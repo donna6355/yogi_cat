@@ -1,9 +1,11 @@
+import '../../data/pose_model.dart';
+
 sealed class PuzzleEvent {}
 
 /// Triggered once on startup to load the asset image and shuffle pieces.
 class PuzzleInitialized extends PuzzleEvent {
-  final String imgPath;
-  PuzzleInitialized({required this.imgPath});
+  final Pose asana;
+  PuzzleInitialized({required this.asana});
 }
 
 /// Player dropped a piece from [fromSlot] onto [toSlot].
@@ -17,4 +19,11 @@ class PuzzlePieceSwapped extends PuzzleEvent {
 class PuzzleHoverChanged extends PuzzleEvent {
   final int? hoveredSlot;
   PuzzleHoverChanged(this.hoveredSlot);
+}
+
+/// Player select an asana option.
+class PuzzleAsanaSelected extends PuzzleEvent {
+  final Pose selected;
+  final int idx;
+  PuzzleAsanaSelected({required this.selected, required this.idx});
 }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'constants/routes.dart';
 import 'presentation/cubit/user_status_cubit.dart';
@@ -37,9 +36,23 @@ class MirApp extends StatelessWidget {
         title: 'title'.tr(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          fontFamily: GoogleFonts.gamjaFlower().fontFamily,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
           useMaterial3: true,
+          outlinedButtonTheme: OutlinedButtonThemeData(
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.black54,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+              side: const BorderSide(color: Colors.grey, width: 1),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+              textStyle: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w500,
+              ),
+              fixedSize: const Size(200, 50),
+            ),
+          ),
         ),
         routerConfig: router,
       ),

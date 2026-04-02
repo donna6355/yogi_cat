@@ -4,17 +4,23 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../constants/constants.dart';
+import '../../data/pose_model.dart';
+import '../components/puzzle_asana.dart';
 import 'puzzle_event.dart';
 import 'puzzle_state.dart';
 
 class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
   static const int gridSize = 4;
   static const int totalPieces = gridSize * gridSize;
+  final List<Pose> asanas;
+  final shakeKeys = List.generate(4, (_) => GlobalKey<ShakeWidgetState>());
 
-  PuzzleBloc() : super(const PuzzleState()) {
+  PuzzleBloc({required this.asanas}) : super(const PuzzleState()) {
     on<PuzzleInitialized>(_onInitialized);
     on<PuzzlePieceSwapped>(_onPieceSwapped);
     on<PuzzleHoverChanged>(_onHoverChanged);
+    on<PuzzleAsanaSelected>(_onAsanaSelected);
   }
 
   // ── Load image then shuffle ──
@@ -24,11 +30,18 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
   ) async {
     emit(state.copyWith(status: PuzzleStatus.loading));
 
-    final image = await _loadAssetImage(event.imgPath);
+    final image = await _loadAssetImage(event.asana.img);
     final pieces = _buildShuffledPieces();
+    final options = _asanaHints(event.asana);
 
     emit(
-      state.copyWith(status: PuzzleStatus.ready, image: image, pieces: pieces),
+      state.copyWith(
+        status: PuzzleStatus.ready,
+        image: image,
+        pieces: pieces,
+        options: options,
+        currentStage: event.asana,
+      ),
     );
   }
 
@@ -62,6 +75,15 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
     );
   }
 
+  void _onAsanaSelected(PuzzleAsanaSelected event, Emitter<PuzzleState> emit) {
+    final Pose selected = event.selected;
+    if (selected.stage != state.currentStage!.stage) {
+      shakeKeys[event.idx].currentState?.shake();
+    } else {
+      emit(state.copyWith(cleared: true));
+    }
+  }
+
   // ── Helpers ──
 
   List<PuzzlePiece> _buildShuffledPieces() {
@@ -82,5 +104,14 @@ class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
     });
     stream.addListener(listener);
     return completer.future;
+  }
+
+  List<Pose> _asanaHints(Pose currentStage) {
+    final list = List<Pose>.from(asanas)..removeAt(currentStage.stage - 1);
+    list.shuffle();
+    final answers = list.take(3).toList();
+    answers.add(currentStage);
+    answers.shuffle();
+    return answers;
   }
 }
