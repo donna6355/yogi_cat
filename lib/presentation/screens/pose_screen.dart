@@ -1,18 +1,55 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../constants/constants.dart';
+import '../../data/pose_model.dart';
 
 class PoseScreen extends StatelessWidget {
-  const PoseScreen({super.key});
+  final Pose asana;
+  const PoseScreen(this.asana, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Text(
-            'POSE Screen',
-            style: Theme.of(context).textTheme.headlineMedium,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.close),
+            onPressed: () => context.pop(),
           ),
         ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(16),
+              child: Image.asset(asana.img),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              asana.sanskrit,
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0),
+              child: Text(
+                asana.name,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ),
+            Text(asana.content, style: Theme.of(context).textTheme.bodyMedium),
+            const SizedBox(height: 8),
+            OutlinedButton(
+              onPressed: () => context.replace(YmRoutes.puzzle, extra: asana),
+              child: Text("tryAgain".tr()),
+            ),
+          ],
+        ),
       ),
     );
   }

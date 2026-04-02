@@ -47,7 +47,7 @@ final GoRouter router = GoRouter(
       path: YmRoutes.pose,
       builder: (BuildContext context, GoRouterState state) {
         final asana = state.extra as Pose?;
-        return const PoseScreen();
+        return PoseScreen(asana!);
       },
     ),
   ],

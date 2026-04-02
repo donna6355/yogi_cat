@@ -45,7 +45,9 @@ class PuzzlePage extends StatelessWidget {
       body: BlocConsumer<PuzzleBloc, PuzzleState>(
         listenWhen: (_, current) => current.cleared,
         listener: (context, state) {
-          context.read<UserStatusCubit>().incrementStatus();
+          context.read<UserStatusCubit>().incrementStatus(
+            state.currentStage!.stage,
+          );
           context.replace(YmRoutes.pose, extra: state.currentStage);
         },
         builder: (context, state) => Column(

@@ -11,7 +11,9 @@ class UserStatusCubit extends Cubit<int> {
     emit(_store.getSolved());
   }
 
-  void incrementStatus() {
+  void incrementStatus(int clearedIdx) {
+    if (clearedIdx != state + 1) return;
+    //TODO toast message
     _store.saveSolved(state + 1);
     emit(state + 1);
   }
