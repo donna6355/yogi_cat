@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/puzzle_bloc.dart';
-import '../bloc/puzzle_event.dart';
-import '../bloc/puzzle_state.dart';
 import 'puzzle_tile.dart';
 
 class PuzzleSlot extends StatelessWidget {

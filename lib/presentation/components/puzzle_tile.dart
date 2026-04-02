@@ -3,7 +3,6 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 
 import '../bloc/puzzle_bloc.dart';
-import '../bloc/puzzle_state.dart';
 
 class PuzzlePieceTile extends StatelessWidget {
   final ui.Image image;

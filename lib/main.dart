@@ -36,7 +36,10 @@ class MirApp extends StatelessWidget {
         title: 'title'.tr(),
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.black,
+            primary: Colors.deepPurpleAccent,
+          ),
           useMaterial3: true,
           outlinedButtonTheme: OutlinedButtonThemeData(
             style: OutlinedButton.styleFrom(
@@ -51,6 +54,20 @@ class MirApp extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
               fixedSize: const Size(200, 50),
+            ),
+          ),
+          expansionTileTheme: ExpansionTileThemeData(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: BorderSide(
+                color: Colors.black45,
+              ), // Optional visible border
+            ),
+            collapsedShape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+              side: BorderSide(
+                color: Colors.black45,
+              ), // Optional visible border
             ),
           ),
         ),

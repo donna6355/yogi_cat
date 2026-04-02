@@ -1,4 +1,4 @@
-import '../../data/pose_model.dart';
+part of 'puzzle_bloc.dart';
 
 sealed class PuzzleEvent {}
 

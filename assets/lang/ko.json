@@ -1,1 +1,10 @@
-{"title":"요가하는 고양이","dragNDrop":"퍼즐 조각을 드래그 앤 드롭하세요","tryAgain":"퍼즐 다시 풀기"}
+{
+  "title":"요가하는 고양이",
+  "dragNDrop":"퍼즐 조각을 드래그 앤 드롭하세요",
+  "tryAgain":"퍼즐 다시 풀기",
+  "search":"단어 또는 의미로 검색...",
+  "noResults":"결과가 없습니다.",
+  "linkedAsanas":"연결된 아사나",
+  "puzzle":"퍼즐",
+  "sanskrit":"산스크리트"
+}

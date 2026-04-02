@@ -1,1 +1,10 @@
-{"title":"Yogi Cat","dragNDrop":"Drag and drop pieces to solve the puzzle","tryAgain":"Try Puzzle Again"}
+{
+  "title":"Yogi Cat",
+  "dragNDrop":"Drag and drop pieces to solve the puzzle",
+  "tryAgain":"Try Puzzle Again",
+  "search":"Search by word or meaning...",
+  "noResults":"No results found.",
+  "linkedAsanas":"Linked Asanas",
+  "puzzle":"Puzzle",
+  "sanskrit":"Sanskrit"
+}

@@ -7,8 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../constants/constants.dart';
 import '../../data/pose_model.dart';
 import '../components/puzzle_asana.dart';
-import 'puzzle_event.dart';
-import 'puzzle_state.dart';
+
+part 'puzzle_event.dart';
+part 'puzzle_state.dart';
 
 class PuzzleBloc extends Bloc<PuzzleEvent, PuzzleState> {
   static const int gridSize = 4;

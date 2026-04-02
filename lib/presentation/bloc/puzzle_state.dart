@@ -1,6 +1,4 @@
-import 'dart:ui' as ui;
-
-import '../../data/pose_model.dart';
+part of 'puzzle_bloc.dart';
 
 class PuzzlePiece {
   final int id; // original position in the image grid (0-based)

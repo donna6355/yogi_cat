@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/pose_model.dart';
 import '../bloc/puzzle_bloc.dart';
-import '../bloc/puzzle_event.dart';
 
 class PuzzleHint extends StatelessWidget {
   const PuzzleHint({super.key});

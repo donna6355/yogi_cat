@@ -1,9 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:yogi_cat/constants/extensions.dart';
 import 'package:yogi_cat/presentation/components/pose_card.dart';
 import 'package:yogi_cat/presentation/components/yoga_space.dart';
 import 'package:yogi_cat/presentation/cubit/user_status_cubit.dart';
+import 'package:yogi_cat/presentation/screens/sanskrit_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -11,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: LayoutBuilder(
           builder: (context, constraint) {
@@ -24,19 +27,46 @@ class HomeScreen extends StatelessWidget {
                       width: constraint.maxWidth,
                     ),
                     Expanded(
-                      child: GridView.builder(
-                        padding: const EdgeInsets.all(16),
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 12,
-                              mainAxisSpacing: 12,
+                      child: DefaultTabController(
+                        length: 2,
+                        child: Column(
+                          children: [
+                            TabBar(
+                              indicatorSize: TabBarIndicatorSize.tab,
+                              tabs: [
+                                Tab(text: 'puzzle'.tr()),
+                                Tab(text: 'sanskrit'.tr()),
+                              ],
                             ),
-                        itemCount: context.list.length,
-                        itemBuilder: (context, index) {
-                          final pose = context.list[index];
-                          return PoseCard(currentStage: stage, pose: pose);
-                        },
+                            Expanded(
+                              child: TabBarView(
+                                children: [
+                                  GridView.builder(
+                                    padding: const EdgeInsets.all(16),
+                                    gridDelegate:
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 2,
+                                          crossAxisSpacing: 12,
+                                          mainAxisSpacing: 12,
+                                        ),
+                                    itemCount: context.list.length,
+                                    itemBuilder: (context, index) {
+                                      final pose = context.list[index];
+                                      return PoseCard(
+                                        currentStage: stage,
+                                        pose: pose,
+                                      );
+                                    },
+                                  ),
+                                  SanskritScreen(
+                                    asanaList: context.list,
+                                    sanskritList: context.sansList,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ],

@@ -5,8 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:yogi_cat/constants/constants.dart';
 
 import '../bloc/puzzle_bloc.dart';
-import '../bloc/puzzle_event.dart';
-import '../bloc/puzzle_state.dart';
 import '../components/puzzle_asana.dart';
 import '../components/puzzle_grid.dart';
 import '../cubit/user_status_cubit.dart';
