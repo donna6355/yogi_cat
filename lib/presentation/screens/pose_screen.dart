@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../constants/constants.dart';
 import '../../data/pose_model.dart';
+import '../components/looping_img.dart';
 import '../cubit/user_status_cubit.dart';
 
 class PoseScreen extends StatelessWidget {
@@ -31,7 +32,7 @@ class PoseScreen extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(16),
-              child: Image.asset(asana.img),
+              child: LoopingImg(firstImg: asana.img, secondImg: asana.asana),
             ),
             const SizedBox(height: 8),
             Text(
@@ -48,9 +49,28 @@ class PoseScreen extends StatelessWidget {
             Text(asana.content, style: Theme.of(context).textTheme.bodyLarge),
             const SizedBox(height: 24),
             if (currentStage >= asana.stage)
-              OutlinedButton(
-                onPressed: () => context.replace(YmRoutes.puzzle, extra: asana),
-                child: Text("tryAgain".tr()),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () =>
+                        context.replace(YmRoutes.puzzle, extra: asana),
+                    child: Row(
+                      children: [
+                        Icon(Icons.refresh),
+                        SizedBox(width: 4),
+                        Text("tryAgain".tr()),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 12),
+                  OutlinedButton(
+                    onPressed: () => context.replace(
+                      YmRoutes.puzzle,
+                      extra: context.list[asana.stage],
+                    ),
+                    child: Text("goToNext".tr()),
+                  ),
+                ],
               ),
           ],
         ),

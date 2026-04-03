@@ -1,7 +1,8 @@
 {
   "title":"Yogi Cat",
   "dragNDrop":"Drag and drop pieces to solve the puzzle",
-  "tryAgain":"Try Puzzle Again",
+  "tryAgain":"Try again",
+  "goToNext":"Next puzzle",
   "search":"Search by word or meaning...",
   "noResults":"No results found.",
   "linkedAsanas":"Linked Asanas",

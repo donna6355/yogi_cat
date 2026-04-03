@@ -43,6 +43,11 @@ class MirApp extends StatelessWidget {
               primary: Colors.deepPurpleAccent,
             ),
             useMaterial3: true,
+            textButtonTheme: TextButtonThemeData(
+              style: ButtonStyle(
+                foregroundColor: WidgetStatePropertyAll(Colors.grey),
+              ),
+            ),
             outlinedButtonTheme: OutlinedButtonThemeData(
               style: OutlinedButton.styleFrom(
                 foregroundColor: Colors.black54,
