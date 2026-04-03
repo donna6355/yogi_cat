@@ -17,4 +17,5 @@ extension LocaleExtension on BuildContext {
 extension PoseExtension on Pose {
   int get stage => int.parse(id.replaceFirst('ym_', ''));
   String get img => 'assets/pose/$id.webp';
+  String get asana => 'assets/sanskrit/$id.webp';
 }

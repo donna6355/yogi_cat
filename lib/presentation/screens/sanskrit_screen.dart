@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/search_bloc.dart';
+import '../components/asana_card.dart';
 import '../../data/pose_model.dart';
 import '../../data/sanskrit_model.dart';
+import '../components/search_bar.dart';
 
 class SanskritScreen extends StatelessWidget {
   final List<Pose> asanaList;
@@ -32,115 +34,45 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _SearchBar(),
-        Expanded(child: _SanskritList()),
-      ],
-    );
-  }
-}
-
-// ── Search Bar ────────────────────────────────────────────────────────────────
-
-class _SearchBar extends StatelessWidget {
-  const _SearchBar();
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 0, 16, 10),
-      child: BlocBuilder<SearchBloc, SearchState>(
-        buildWhen: (prev, curr) => prev.query != curr.query,
-        builder: (context, state) {
-          return TextField(
-            controller: context.read<SearchBloc>().controller,
-            onChanged: (value) =>
-                context.read<SearchBloc>().add(SanskritSearchChanged(value)),
-            decoration: InputDecoration(
-              hintText: 'search'.tr(),
-              prefixIcon: const Icon(Icons.search),
-              filled: true,
-              fillColor: Theme.of(context).colorScheme.surface,
-              contentPadding: const EdgeInsets.symmetric(vertical: 0),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide.none,
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
-}
-
-// ── Sanskrit List ─────────────────────────────────────────────────────────────
-
-class _SanskritList extends StatelessWidget {
-  const _SanskritList();
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SearchBloc, SearchState>(
-      builder: (context, state) {
-        if (state.filteredList.isEmpty) {
-          return Center(
-            child: Text(
-              'noResults'.tr(),
-              style: const TextStyle(fontSize: 16, color: Colors.grey),
-            ),
-          );
-        }
-
-        return ListView.builder(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-          itemCount: state.filteredList.length,
-          itemBuilder: (context, index) {
-            final sanskrit = state.filteredList[index];
-            final linkedAsanas = context.read<SearchBloc>().getLinkedAsanas(
-              sanskrit,
-            );
-
-            return _SanskritCard(
-              sanskrit: sanskrit,
-              linkedAsanas: linkedAsanas,
-            );
-          },
-        );
-      },
-    );
-  }
-}
-
-// ── Sanskrit Card (ExpansionTile) ─────────────────────────────────────────────
-
-class _SanskritCard extends StatelessWidget {
-  final Sanskrit sanskrit;
-  final List<Pose> linkedAsanas;
-
-  const _SanskritCard({required this.sanskrit, required this.linkedAsanas});
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8),
-      child: ExpansionTile(
-        tilePadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-        title: Text(
-          sanskrit.sanskrit,
-          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+        SanskritSearchBar(),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Divider(height: 0),
         ),
-        subtitle: Text(
-          sanskrit.meaning,
-          style: TextStyle(
-            color: Theme.of(context).colorScheme.primary,
-            fontSize: 13,
+        Expanded(
+          child: BlocBuilder<SearchBloc, SearchState>(
+            builder: (context, state) {
+              if (state.filteredList.isEmpty) {
+                return Center(
+                  child: Text(
+                    'noResults'.tr(),
+                    style: const TextStyle(fontSize: 16, color: Colors.grey),
+                  ),
+                );
+              }
+              return ListView.builder(
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 8,
+                ),
+                itemCount: state.filteredList.length,
+                itemBuilder: (context, index) {
+                  final sanskrit = state.filteredList[index];
+                  final linkedAsanas = context
+                      .read<SearchBloc>()
+                      .getLinkedAsanas(sanskrit);
+                  return SanskritCard(
+                    sanskrit: sanskrit,
+                    linkedAsanas: linkedAsanas,
+                  );
+                },
+              );
+            },
           ),
         ),
-        children: [
-          ...linkedAsanas.map((pose) => Text(pose.name)),
-          const SizedBox(height: 8),
-        ],
-      ),
+      ],
     );
   }
 }

@@ -1,9 +1,11 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../constants/constants.dart';
 import '../../data/pose_model.dart';
+import '../cubit/user_status_cubit.dart';
 
 class PoseScreen extends StatelessWidget {
   final Pose asana;
@@ -39,15 +41,16 @@ class PoseScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 4.0),
               child: Text(
                 asana.name,
-                style: Theme.of(context).textTheme.bodyLarge,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
-            Text(asana.content, style: Theme.of(context).textTheme.bodyMedium),
-            const SizedBox(height: 8),
-            OutlinedButton(
-              onPressed: () => context.replace(YmRoutes.puzzle, extra: asana),
-              child: Text("tryAgain".tr()),
-            ),
+            Text(asana.content, style: Theme.of(context).textTheme.bodyLarge),
+            const SizedBox(height: 24),
+            if (context.read<UserStatusCubit>().state > asana.stage)
+              OutlinedButton(
+                onPressed: () => context.replace(YmRoutes.puzzle, extra: asana),
+                child: Text("tryAgain".tr()),
+              ),
           ],
         ),
       ),

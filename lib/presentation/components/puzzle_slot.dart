@@ -28,8 +28,10 @@ class PuzzleSlot extends StatelessWidget {
 
   Color get _borderColor {
     if (isHovered) return Colors.amber;
-    if (isCorrect && !isSolved)
+    if (isCorrect && !isSolved) {
       return Colors.greenAccent.withValues(alpha: 0.6);
+    }
+
     return Colors.deepPurple.withValues(alpha: 0.3);
   }
 
@@ -45,7 +47,7 @@ class PuzzleSlot extends StatelessWidget {
       onLeave: (_) => bloc.add(PuzzleHoverChanged(null)),
       onAcceptWithDetails: (details) =>
           bloc.add(PuzzlePieceSwapped(fromSlot: details.data, toSlot: slot)),
-      builder: (context, _, __) => Draggable<int>(
+      builder: (context, _, _) => Draggable<int>(
         data: slot,
         feedback: PuzzlePieceTile(
           image: image,

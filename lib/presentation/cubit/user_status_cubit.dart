@@ -27,10 +27,7 @@ class UserStatusCubit extends Cubit<int> {
       toastification.show(
         type: ToastificationType.success,
         style: ToastificationStyle.flatColored,
-        title: Text(
-          '${'newAsana'.tr()}\n${'newItem'.tr()}',
-          textAlign: TextAlign.center,
-        ),
+        title: Text('newAsana'.tr(), textAlign: TextAlign.center),
         autoCloseDuration: const Duration(seconds: 3),
         showIcon: false,
         closeButton: ToastCloseButton(showType: CloseButtonShowType.none),
@@ -49,5 +46,13 @@ class UserStatusCubit extends Cubit<int> {
       );
       return;
     }
+    toastification.show(
+      type: ToastificationType.success,
+      style: ToastificationStyle.flatColored,
+      title: Text('correct'.tr(), textAlign: TextAlign.center),
+      autoCloseDuration: const Duration(seconds: 3),
+      showIcon: false,
+      closeButton: ToastCloseButton(showType: CloseButtonShowType.none),
+    );
   }
 }
