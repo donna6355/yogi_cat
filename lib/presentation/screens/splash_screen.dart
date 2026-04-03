@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:yogi_cat/constants/images.dart';
 
 import '../cubit/splash_cubit.dart';
 import '../../constants/routes.dart';
@@ -26,11 +27,11 @@ class SplashPage extends StatelessWidget {
       listener: (_, isFirst) =>
           context.go(isFirst ? YmRoutes.tutorial : YmRoutes.home),
       child: Scaffold(
-        body: Center(
-          child: Text(
-            'SPLASH SCREEN',
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
+        body: Image.asset(
+          YmImg.splash,
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.contain,
         ),
       ),
     );

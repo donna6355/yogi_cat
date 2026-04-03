@@ -11,7 +11,7 @@ class SplashCubit extends Cubit<bool> {
     checkFirstVisit();
   }
   Future<void> checkFirstVisit() async {
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 3));
     emit(_store.checkFirst());
   }
 }
