@@ -13,6 +13,7 @@ class PoseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final currentStage = context.read<UserStatusCubit>().state;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -46,7 +47,7 @@ class PoseScreen extends StatelessWidget {
             ),
             Text(asana.content, style: Theme.of(context).textTheme.bodyLarge),
             const SizedBox(height: 24),
-            if (context.read<UserStatusCubit>().state > asana.stage)
+            if (currentStage >= asana.stage)
               OutlinedButton(
                 onPressed: () => context.replace(YmRoutes.puzzle, extra: asana),
                 child: Text("tryAgain".tr()),
