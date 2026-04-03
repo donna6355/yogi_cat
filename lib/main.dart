@@ -62,6 +62,7 @@ class MirApp extends StatelessWidget {
               ),
             ),
             expansionTileTheme: ExpansionTileThemeData(
+              iconColor: Colors.black,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8),
                 side: BorderSide(

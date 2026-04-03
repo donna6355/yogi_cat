@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/search_bloc.dart';
-import '../components/asana_card.dart';
+import '../components/sanskrit_card.dart';
+import '../components/search_bar.dart';
 import '../../data/pose_model.dart';
 import '../../data/sanskrit_model.dart';
-import '../components/search_bar.dart';
 
 class SanskritScreen extends StatelessWidget {
   final List<Pose> asanaList;
