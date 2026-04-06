@@ -26,7 +26,7 @@ class YogaSpace extends StatelessWidget {
         ),
         ConstrainedBox(
           constraints: BoxConstraints(maxWidth: 460),
-          child: Image.asset('assets/space/item_${stage ~/ 2}.webp'),
+          child: Image.asset('assets/space/item_${stage ~/ 3}.webp'),
         ),
         SizedBox(
           height: height,

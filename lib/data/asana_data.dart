@@ -21,7 +21,7 @@ class AsanaData {
       name: "Eagle Pose",
       sanskrit: "Garudasana",
       content:
-          "'Garuda' is the king of birds. This balancing pose requires wrapping one leg over the other and intertwining the arms. It builds focus and strengthens the thighs, ankles, and calves. It provides a unique stretch to the upper back and outer hips.",
+          "'Garuda' is the king of birds, a.k.a Eagle. This balancing pose requires wrapping one leg over the other and intertwining the arms. It builds focus and strengthens the thighs, ankles, and calves. It provides a unique stretch to the upper back and outer hips.",
     ),
     Pose(
       id: "ym_4",
@@ -277,7 +277,7 @@ class AsanaData {
       name: "독수리 자세",
       sanskrit: "가루다사나",
       content:
-          "'가루다(Garuda)'는 신화 속 새들의 왕을 뜻합니다. 다리와 팔을 꼬아 균형을 잡는 자세로 집중력을 높여줍니다. 허벅지, 발목, 종아리를 강화하며, 평소 늘리기 어려운 등 상부(견갑골 사이)와 고관절 바깥쪽을 시원하게 늘려줍니다.",
+          "'가루다(Garuda)'는 신화 속 새들의 왕, 독수리를 뜻합니다. 다리와 팔을 꼬아 균형을 잡는 자세로 집중력을 높여줍니다. 허벅지, 발목, 종아리를 강화하며, 평소 늘리기 어려운 등 상부(견갑골 사이)와 고관절 바깥쪽을 시원하게 늘려줍니다.",
     ),
     Pose(
       id: "ym_4",

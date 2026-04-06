@@ -34,8 +34,8 @@ class UserStatusCubit extends Cubit<int> {
       );
       return;
     }
-    //idx is even -> item added
-    if (clearedIdx.isEven) {
+    //idx is 3X -> item added
+    if (clearedIdx % 3 == 0) {
       toastification.show(
         type: ToastificationType.success,
         style: ToastificationStyle.flatColored,
