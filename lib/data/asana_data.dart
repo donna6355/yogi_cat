@@ -39,7 +39,7 @@ class AsanaData {
     ),
     Pose(
       id: "ym_6",
-      name: "Cobra",
+      name: "Cobra Pose",
       sanskrit: "Bhujangasana",
       content:
           "'Bhujanga' means serpent. Lying on the belly and lifting the chest, this pose mimics a cobra raising its hood. It strengthens the spinal extensors and glutes, while opening and stretching the chest, lungs, and abdomen.",
@@ -53,7 +53,7 @@ class AsanaData {
     ),
     Pose(
       id: "ym_8",
-      name: "Crow",
+      name: "Crow Pose",
       sanskrit: "Bakasana",
       content:
           "'Baka' means crane or crow. This is a foundational arm balance that builds focus. Squat down and place your knees on your upper arms, leaning forward to lift your feet. It significantly strengthens the wrists, arms, and core. The upper back is stretched through protraction, and the inner groins are opened.",
@@ -74,7 +74,7 @@ class AsanaData {
     ),
     Pose(
       id: "ym_11",
-      name: "Lotus",
+      name: "Lotus Pose",
       sanskrit: "Padmasana",
       content:
           "'Padma' means lotus. This cross-legged meditation pose requires feet to rest on opposite thighs. It promotes spinal alignment and strengthens the back. It demands and develops high flexibility in the hips, knees, and ankles.",
@@ -102,7 +102,7 @@ class AsanaData {
     ),
     Pose(
       id: "ym_15",
-      name: "Chair",
+      name: "Chair Pose",
       sanskrit: "Utkatasana",
       content:
           "'Utkata' means fierce or powerful. Mimicking sitting in an invisible chair, this pose generates heat. It powerfully strengthens the quads, glutes, and core, while stretching and opening the shoulders and chest.",
@@ -151,14 +151,14 @@ class AsanaData {
     ),
     Pose(
       id: "ym_22",
-      name: "Revolved Triagle",
+      name: "Revolved Triagle Pose",
       sanskrit: "Parivrtta Trikonasana",
       content:
           "'Parivrtta' means revolved and 'Trikona' means triangle. This is a complex standing twist that challenges balance. It strengthens the legs and core, while providing a deep stretch to the hips, outer hamstrings (IT band), and spine, while opening the chest.",
     ),
     Pose(
       id: "ym_23",
-      name: "Wheel / Upward Bow",
+      name: "Wheel / Upward Bow Pose",
       sanskrit: "Urdhva Dhanurasana",
       content:
           "'Urdhva' means upward and 'Dhanura' means bow. This is a powerful backbend. It strengthens the arms, wrists, legs, and spine, while providing an intense stretch to the entire front body, including the abdomen, chest, and hip flexors.",
@@ -172,7 +172,7 @@ class AsanaData {
     ),
     Pose(
       id: "ym_25",
-      name: "Extended Triangle",
+      name: "Extended Triangle Pose",
       sanskrit: "Utthita Trikonasana",
       content:
           "'Utthita' means extended. This foundational pose involves reaching one hand down while the other reaches up. It strengthens the knees and thighs, while stretching the hips, groins, hamstrings, and chest, improving overall body alignment and stability.",
@@ -187,7 +187,7 @@ class AsanaData {
     ),
     Pose(
       id: "ym_27",
-      name: "Revolved Side Angle",
+      name: "Revolved Side Angle Pose",
       sanskrit: "Parivrtta Parsvakonasana",
       content:
           "'Parivrtta' means revolved, 'Parsva' means side and 'Kona' means angle. This deep standing twist involves placing an arm outside the opposite knee. It strengthens the legs and glutes, while intensely stretching the spine, waist, and outer hips, promoting detoxification through compression.",
@@ -208,7 +208,7 @@ class AsanaData {
     ),
     Pose(
       id: "ym_30",
-      name: "Extended Side Angle",
+      name: "Extended Side Angle Pose",
       sanskrit: "Utthita Parsvakonasana",
       content:
           "'Utthita' means extended, 'Parsva' means side and 'Kona' means angle. This pose creates a long line from the back heel to the fingertips. It strengthens the legs, knees, and ankles, while stretching the hamstrings, groins, and the entire side of the body (obliques and lats).",
@@ -222,21 +222,21 @@ class AsanaData {
     ),
     Pose(
       id: "ym_32",
-      name: "Cow Face",
+      name: "Cow Face Pose",
       sanskrit: "Gomukasana",
       content:
           "'Go' means cow and 'Mukha' means face. This pose involves stacking the knees and reaching the arms behind the back to bind. It strengthens the back, while stretching the hips, glutes, shoulders, and triceps simultaneously.",
     ),
     Pose(
       id: "ym_33",
-      name: "Tree",
+      name: "Tree Pose",
       sanskrit: "Vrikshasana",
       content:
           "Vriksha' means tree. A classic balance pose standing on one leg with the other foot against the inner thigh. It strengthens the standing leg, ankle, and core, while stretching the inner thigh and groin of the bent leg.",
     ),
     Pose(
       id: "ym_34",
-      name: "Camel",
+      name: "Camel Pose",
       sanskrit: "Ustrasana",
       content:
           "'Ustra' means camel. A kneeling backbend where you reach for your heels. It strengthens the back and glutes, while deeply stretching the entire front of the body, especially the throat, chest, and hip flexors.",
