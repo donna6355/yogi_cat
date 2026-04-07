@@ -13,10 +13,8 @@ class InfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        surfaceTintColor: Colors.transparent,
-        scrolledUnderElevation: 0,
         automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
         actions: [
           IconButton(
             icon: const Icon(Icons.close),
@@ -37,7 +35,7 @@ class InfoScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 6),
+                  padding: const EdgeInsets.only(top: 24, bottom: 8),
                   child: OutlinedButton(
                     onPressed: () => context.replace(YmRoutes.tutorial),
                     child: Text('tutorial'.tr()),
@@ -45,7 +43,7 @@ class InfoScreen extends StatelessWidget {
                 ),
                 OutlinedButton(
                   onPressed: () =>
-                      getIt<EmailSenderHelper>().sendEmail('sunj'.tr()),
+                      getIt<EmailSenderHelper>().sendEmail('subj'.tr()),
                   child: Text('contact'.tr()),
                 ),
               ],

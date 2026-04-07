@@ -52,13 +52,14 @@ class HomeScreen extends StatelessWidget {
                                         crossAxisSpacing: 12,
                                         mainAxisSpacing: 12,
                                       ),
-                                  itemCount: context.list.length,
+                                  itemCount: context.list.length + 1,
                                   itemBuilder: (context, index) {
-                                    final pose = context.list[index];
-                                    return PoseCard(
-                                      currentStage: stage,
-                                      pose: pose,
-                                    );
+                                    return index == context.list.length
+                                        ? const ComingSoonCard()
+                                        : PoseCard(
+                                            currentStage: stage,
+                                            pose: context.list[index],
+                                          );
                                   },
                                 ),
                                 SanskritScreen(
@@ -77,6 +78,33 @@ class HomeScreen extends StatelessWidget {
             },
           ),
         ),
+      ),
+    );
+  }
+}
+
+class ComingSoonCard extends StatelessWidget {
+  const ComingSoonCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        border: BoxBorder.all(color: Colors.black),
+      ),
+      child: Stack(
+        alignment: AlignmentGeometry.bottomCenter,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(YmImg.coming),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 24),
+            child: Text('comingSoon'.tr()),
+          ),
+        ],
       ),
     );
   }

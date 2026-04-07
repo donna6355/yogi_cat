@@ -15,5 +15,10 @@
   "greeting":"Hello, I am the developer, cat butler, and yogini of Yogi Cat.\nI created this app to help you learn asanas and Sanskrit in a fun and easy way.\nSince cats have different body structures to humans, some poses may look a little awkward, and the explanations for asanas may be not enough.\nPlease feel free to send me any errors, requests, or inquiries related to Yoga Cat. I will do my best to improve this app.\n\nNya-maste 😸🙏",
   "subj":"[Yogi Cat] to developer...",
   "contact":"Send Email",
-  "tutorial":"View Tutorial"
+  "tutorial":"View Tutorial",
+  "welcome":"Welcome to Yogi Cat :)",
+  "solvePuzzle":"Solve the puzzle and guess which asana it is!",
+  "itemNAsana":"The more puzzles you solve, the more items and asanas Yoga Cat has!",
+  "learSanskrit":"You can also easily learn unfamiliar Sanskrit with Yoga Cat!",
+  "comingSoon":"Coming Soon..."
 }

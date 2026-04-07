@@ -22,12 +22,10 @@ class SanskritSearchBar extends StatelessWidget {
             decoration: InputDecoration(
               hintText: 'search'.tr(),
               prefixIcon: const Icon(Icons.search),
-              filled: true,
-              fillColor: Theme.of(context).colorScheme.surface,
               contentPadding: const EdgeInsets.symmetric(vertical: 0),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide.none,
+                borderSide: BorderSide(color: Colors.grey),
               ),
             ),
           );

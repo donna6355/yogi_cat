@@ -34,10 +34,9 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SanskritSearchBar(),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Divider(height: 0),
+          padding: const EdgeInsets.only(top: 8),
+          child: SanskritSearchBar(),
         ),
         Expanded(
           child: BlocBuilder<SearchBloc, SearchState>(
@@ -53,10 +52,7 @@ class SearchPage extends StatelessWidget {
               return ListView.builder(
                 keyboardDismissBehavior:
                     ScrollViewKeyboardDismissBehavior.onDrag,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 8,
-                ),
+                padding: const EdgeInsets.fromLTRB(12, 8, 12, 100),
                 itemCount: state.filteredList.length,
                 itemBuilder: (context, index) {
                   final sanskrit = state.filteredList[index];

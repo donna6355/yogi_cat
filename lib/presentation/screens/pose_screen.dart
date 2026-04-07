@@ -17,6 +17,7 @@ class PoseScreen extends StatelessWidget {
     final currentStage = context.read<UserStatusCubit>().state;
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         actions: [
           IconButton(

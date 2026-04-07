@@ -38,11 +38,13 @@ class MirApp extends StatelessWidget {
           title: 'title'.tr(),
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
             colorScheme: ColorScheme.fromSeed(
               seedColor: Colors.black,
               primary: Colors.deepPurpleAccent,
             ),
             useMaterial3: true,
+
             textButtonTheme: TextButtonThemeData(
               style: ButtonStyle(
                 foregroundColor: WidgetStatePropertyAll(Colors.grey),
