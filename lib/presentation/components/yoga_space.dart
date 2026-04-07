@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:yogi_cat/constants/images.dart';
+import 'package:yogi_cat/constants/routes.dart';
 
 class YogaSpace extends StatelessWidget {
   final int stage;
@@ -34,6 +36,21 @@ class YogaSpace extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(top: 48, bottom: 4),
             child: Image.asset('assets/space/asana_${stage ~/ 5}.webp'),
+          ),
+        ),
+        Positioned(
+          right: 8,
+          top: 8,
+          child: IconButton(
+            onPressed: () => context.push(YmRoutes.info),
+            icon: Container(
+              padding: const EdgeInsets.all(2),
+              decoration: BoxDecoration(
+                color: Colors.black,
+                borderRadius: BorderRadius.circular(40),
+              ),
+              child: Icon(Icons.question_mark_rounded, color: Colors.white),
+            ),
           ),
         ),
       ],

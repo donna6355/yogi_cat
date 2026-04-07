@@ -65,7 +65,7 @@ class PoseScreen extends StatelessWidget {
                   SizedBox(width: 12),
                   asana.stage == context.list.length
                       ? OutlinedButton(
-                          onPressed: () => context.replace(YmRoutes.request),
+                          onPressed: () => context.replace(YmRoutes.info),
                           child: Text("atTheEnd".tr()),
                         )
                       : OutlinedButton(

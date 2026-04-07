@@ -12,6 +12,8 @@
   "newItem":"🎉Congrats! New item🎉",
   "newAsana":"🎊Congrats! New asana🎊",
   "atTheEnd":"Request More!",
-  "greeting":"Hello, I am the developer, cat butler, and yogini of Yogi Cat.\nI created this app to help you learn asanas and Sanskrit in a fun and easy way.\nSince cats have different body structures than humans, some poses may look a little awkward, and the explanations for asanas may be not enough.\nPlease feel free to send me any errors, requests, or inquiries related to Yoga Cat. I will do my best to improve this app.\nNya-maste 😸🙏",
-  "contact":"Send Email"
+  "greeting":"Hello, I am the developer, cat butler, and yogini of Yogi Cat.\nI created this app to help you learn asanas and Sanskrit in a fun and easy way.\nSince cats have different body structures to humans, some poses may look a little awkward, and the explanations for asanas may be not enough.\nPlease feel free to send me any errors, requests, or inquiries related to Yoga Cat. I will do my best to improve this app.\n\nNya-maste 😸🙏",
+  "subj":"[Yogi Cat] to developer...",
+  "contact":"Send Email",
+  "tutorial":"View Tutorial"
 }

@@ -5,7 +5,7 @@ import '../data/pose_model.dart';
 import '../presentation/screens/home_screen.dart';
 import '../presentation/screens/pose_screen.dart';
 import '../presentation/screens/puzzle_screen.dart';
-import '../presentation/screens/request_screen.dart';
+import '../presentation/screens/info_screen.dart';
 import '../presentation/screens/splash_screen.dart';
 import '../presentation/screens/tutorial_screen.dart';
 
@@ -15,7 +15,7 @@ class YmRoutes {
   static const String tutorial = '/tutorial';
   static const String puzzle = '/puzzle';
   static const String pose = '/pose';
-  static const String request = '/request';
+  static const String info = '/info';
 }
 
 final GoRouter router = GoRouter(
@@ -53,9 +53,9 @@ final GoRouter router = GoRouter(
       },
     ),
     GoRoute(
-      path: YmRoutes.request,
+      path: YmRoutes.info,
       builder: (BuildContext context, GoRouterState state) {
-        return RequestScreen();
+        return InfoScreen();
       },
     ),
   ],
