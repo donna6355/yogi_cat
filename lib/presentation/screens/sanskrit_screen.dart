@@ -46,7 +46,7 @@ class SearchPage extends StatelessWidget {
                 return Center(
                   child: Text(
                     'noResults'.tr(),
-                    style: const TextStyle(fontSize: 16, color: Colors.grey),
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                 );
               }

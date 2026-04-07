@@ -1,11 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:yogi_cat/constants/extensions.dart';
-import 'package:yogi_cat/presentation/components/pose_card.dart';
-import 'package:yogi_cat/presentation/components/yoga_space.dart';
-import 'package:yogi_cat/presentation/cubit/user_status_cubit.dart';
-import 'package:yogi_cat/presentation/screens/sanskrit_screen.dart';
+import 'package:go_router/go_router.dart';
+import '/presentation/components/pose_card.dart';
+import '/presentation/components/yoga_space.dart';
+import '/presentation/cubit/user_status_cubit.dart';
+import '/presentation/screens/sanskrit_screen.dart';
+
+import '../../constants/constants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,6 +18,17 @@ class HomeScreen extends StatelessWidget {
     return GestureDetector(
       onTap: FocusManager.instance.primaryFocus?.unfocus,
       child: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          automaticallyImplyLeading: false,
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.help),
+              onPressed: () => context.push(YmRoutes.request),
+            ),
+          ],
+        ),
         body: SafeArea(
           child: BlocBuilder<UserStatusCubit, int>(
             builder: (context, stage) {

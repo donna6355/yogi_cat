@@ -1,6 +1,6 @@
 {
   "title":"Yogi Cat",
-  "dragNDrop":"Drag and drop pieces to solve the puzzle",
+  "dragNDrop":"Drag and drop pieces",
   "tryAgain":"Try again",
   "goToNext":"Next puzzle",
   "search":"Search by word or meaning...",
@@ -10,5 +10,8 @@
   "sanskrit":"Sanskrit",
   "correct":"🎉Correct Answer!",
   "newItem":"🎉Congrats! New item🎉",
-  "newAsana":"🎊Congrats! New asana🎊"
+  "newAsana":"🎊Congrats! New asana🎊",
+  "atTheEnd":"Request More!",
+  "greeting":"Hello, I am the developer, cat butler, and yogini of Yogi Cat.\nI created this app to help you learn asanas and Sanskrit in a fun and easy way.\nSince cats have different body structures than humans, some poses may look a little awkward, and the explanations for asanas may be not enough.\nPlease feel free to send me any errors, requests, or inquiries related to Yoga Cat. I will do my best to improve this app.\nNya-maste 😸🙏",
+  "contact":"Send Email"
 }

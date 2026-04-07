@@ -63,13 +63,18 @@ class PoseScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 12),
-                  OutlinedButton(
-                    onPressed: () => context.replace(
-                      YmRoutes.puzzle,
-                      extra: context.list[asana.stage],
-                    ),
-                    child: Text("goToNext".tr()),
-                  ),
+                  asana.stage == context.list.length
+                      ? OutlinedButton(
+                          onPressed: () => context.replace(YmRoutes.request),
+                          child: Text("atTheEnd".tr()),
+                        )
+                      : OutlinedButton(
+                          onPressed: () => context.replace(
+                            YmRoutes.puzzle,
+                            extra: context.list[asana.stage],
+                          ),
+                          child: Text("goToNext".tr()),
+                        ),
                 ],
               ),
           ],

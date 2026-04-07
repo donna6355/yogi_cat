@@ -281,7 +281,7 @@ class SanskritData {
     Sanskrit(
       id: "s4",
       sanskrit: "가루다",
-      meaning: "독수리  / 새들의 왕)",
+      meaning: "독수리  / 새들의 왕",
       asanaIds: ["ym_3"],
     ),
     Sanskrit(id: "s5", sanskrit: "고", meaning: "소", asanaIds: ["ym_32"]),

@@ -26,10 +26,13 @@ class SanskritCard extends StatelessWidget {
           children: [
             Text(
               sanskrit.sanskrit,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             const SizedBox(width: 8),
-            Text(sanskrit.meaning, style: TextStyle(fontSize: 13)),
+            Text(
+              sanskrit.meaning,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           ],
         ),
         children: [
@@ -53,7 +56,7 @@ class SanskritCard extends StatelessWidget {
                         children: [
                           Text(
                             pose.sanskrit,
-                            style: TextStyle(fontWeight: FontWeight.bold),
+                            style: Theme.of(context).textTheme.titleSmall,
                           ),
 
                           Text(

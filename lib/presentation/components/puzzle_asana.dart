@@ -15,7 +15,7 @@ class PuzzleHint extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Text(
         'dragNDrop'.tr(),
-        style: TextStyle(fontSize: 20),
+        style: Theme.of(context).textTheme.titleLarge,
         textAlign: TextAlign.center,
       ),
     );

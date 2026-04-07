@@ -91,7 +91,7 @@ class AsanaData {
       name: "Wide Fold",
       sanskrit: "Prasarita Padottanasana",
       content:
-          "Prasarita' means expanded or spread out. Standing with feet wide and folding forward, this pose uses gravity to decompress the spine. It strengthens the feet and legs, while stretching the hamstrings and inner thighs.",
+          "'Prasarita' means expanded or spread and 'Pada' is foot. Standing with feet wide and folding forward, this pose uses gravity to decompress the spine. It strengthens the feet and legs, while stretching the hamstrings and inner thighs.",
     ),
     Pose(
       id: "ym_14",
@@ -175,7 +175,7 @@ class AsanaData {
       name: "Extended Triangle Pose",
       sanskrit: "Utthita Trikonasana",
       content:
-          "'Utthita' means extended. This foundational pose involves reaching one hand down while the other reaches up. It strengthens the knees and thighs, while stretching the hips, groins, hamstrings, and chest, improving overall body alignment and stability.",
+          "'Utthita' means extended and 'Trikona' means triangle. This foundational pose involves reaching one hand down while the other reaches up. It strengthens the knees and thighs, while stretching the hips, groins, hamstrings, and chest, improving overall body alignment and stability.",
     ),
 
     Pose(
@@ -347,7 +347,7 @@ class AsanaData {
       name: "다리 벌린 전굴",
       sanskrit: "프라사리타 파도타나사나",
       content:
-          "'프라사리타(Prasarita)'는 확장된 상태를 뜻합니다. 다리를 넓게 벌리고 서서 상체를 숙이는 자세입니다. 발바닥 아치와 다리 근육을 강화하며, 햄스트링과 허벅지 안쪽을 시원하게 스트레칭해 줍니다.",
+          "'프라사리타(Prasarita)'는 확장된 상태를, '파다(Pada)'는 발을 뜻합니다. 다리를 넓게 벌리고 서서 상체를 숙이는 자세입니다. 발바닥 아치와 다리 근육을 강화하며, 햄스트링과 허벅지 안쪽을 시원하게 스트레칭해 줍니다.",
     ),
     Pose(
       id: "ym_14",
@@ -432,7 +432,7 @@ class AsanaData {
       name: "뻗은 삼각 자세",
       sanskrit: "웃티타 트리코나사나",
       content:
-          "'웃티타(Utthita)'는 확장된 상태를 뜻합니다. 한 손을 바닥(또는 다리)으로 뻗고 반대 손은 하늘을 향합니다. 무릎과 허벅지를 강화하며, 고관절, 서혜부, 햄스트링, 가슴을 넓게 확장하며 스트레칭하는 효과가 있습니다.",
+          "'웃티타(Utthita)'는 확장된 상태를, '트리코나(Trikona)'는 삼각형을 뜻합니다. 한 손을 바닥(또는 다리)으로 뻗고 반대 손은 하늘을 향합니다. 무릎과 허벅지를 강화하며, 고관절, 서혜부, 햄스트링, 가슴을 넓게 확장하며 스트레칭하는 효과가 있습니다.",
     ),
     Pose(
       id: "ym_26",
@@ -509,7 +509,7 @@ class AsanaData {
       name: "왕 비둘기 자세",
       sanskrit: "에카 파다 라자카포타사나",
       content:
-          "'에카(하나), 파다(발), 라자(왕), 카포타(비둘기)'의 합성어입니다. 한 다리는 앞으로 접고 한 다리는 뒤로 뻗습니다. 허리를 강화하며, 앞다리의 둔근 및 고관절 바깥쪽과 뒷다리의 고관절 굴근을 강력하게 스트레칭합니다.",
+          "'에카(Eka, 하나), 파다(Pada, 발), 라자(Raja, 왕), 카포타(Kapota, 비둘기)'의 합성어입니다. 한 다리는 앞으로 접고 한 다리는 뒤로 뻗습니다. 허리를 강화하며, 앞다리의 둔근 및 고관절 바깥쪽과 뒷다리의 고관절 굴근을 강력하게 스트레칭합니다.",
     ),
   ];
 }
